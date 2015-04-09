@@ -105,8 +105,17 @@ main_page_content = '''
       <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
           <div class="navbar-header">
-            <a class="navbar-brand" href="#">Fresh Tomatoes Movie Trailers</a>
-          </div>
+            <a class="navbar-brand" href="fresh_tomatoes_all.html">Fresh Tomatoes Movie Trailers</a>
+          </div>'''
+
+header_bar = '''
+			<div class="nav navbar-nav"> 
+			<li><a href="#">Drama</a></li>
+			<li><a href="#">Documentary</a></li>
+			<li><a href="#">Animation</a></li>
+		    </div>'''
+		  
+end_main_page_content = '''
         </div>
       </div>
     </div>
@@ -144,15 +153,22 @@ def create_movie_tiles_content(movies):
 
 def open_movies_page(movies):
   # Create or overwrite the output file
-  output_file = open('fresh_tomatoes.html', 'w')
-
+  main_output = open('fresh_tomatoes_all.html', 'w')
+  drama_output = open('drama.html', 'w')
+  documentary_output = open('documentary.html', 'w')
+  animation_output = open('animation.html', 'w')
+ 
   # Replace the placeholder for the movie tiles with the actual dynamically generated content
-  rendered_content = main_page_content.format(movie_tiles=create_movie_tiles_content(movies))
+  rendered_content = end_main_page_content.format(movie_tiles=create_movie_tiles_content(movies))
+  rendered_content = main_page_content + header_bar + end_main_page_content
 
   # Output the file
-  output_file.write(main_page_head + rendered_content)
-  output_file.close()
+  main_output.write(main_page_head + rendered_content)
+  main_output.close()
+  drama_output.close()
+  documentary_output.close()
+  animation_output.close()
 
   # open the output file in the browser
-  url = os.path.abspath(output_file.name)
+  url = os.path.abspath(main_output.name)
   webbrowser.open('file://' + url, new=2) # open in a new tab, if possible
