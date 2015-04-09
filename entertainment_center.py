@@ -30,13 +30,13 @@ jiro_dreams_of_sushi = media.Movie(movie_title = "Jiro Dreams of Sushi",
 up = media.Movie(movie_title = "Up",
 	poster_image = "http://upload.wikimedia.org/wikipedia/en/0/05/Up_%282009_film%29.jpg",
 	trailer_youtube = "https://www.youtube.com/watch?v=ORFWdXl_zJ4",
-	genre = "Animated",
+	genre = "Animation",
 	amazon_link = "http://www.amazon.com/Up-Ed-Asner/dp/B005ZMTXMY/ref=sr_1_1?ie=UTF8&qid=1428575943&sr=8-1&keywords=Up")
 	
 walle = media.Movie(movie_title = "WALL-E",
 	poster_image = "http://upload.wikimedia.org/wikipedia/en/c/c2/WALL-Eposter.jpg",
 	trailer_youtube = "https://www.youtube.com/watch?v=ZisWjdjs-gM",
-	genre = "Animated",
+	genre = "Animation",
 	amazon_link = "http://www.amazon.com/gp/product/B003QTSMXE/ref=pd_cbs_mov_aiv_1")
 
 movies = [pirates_of_silicon_valley, the_social_network, queen_of_versailles, jiro_dreams_of_sushi, up, walle]

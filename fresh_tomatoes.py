@@ -83,7 +83,7 @@ main_page_head = '''
 '''
 
 # The main page layout and title bar
-main_page_content = '''
+top_main_page_content = '''
 <!DOCTYPE html>
 <html lang="en">
   <body>
@@ -110,9 +110,9 @@ main_page_content = '''
 
 header_bar = '''
 			<div class="nav navbar-nav"> 
-			<li><a href="#">Drama</a></li>
-			<li><a href="#">Documentary</a></li>
-			<li><a href="#">Animation</a></li>
+			<li><a href="drama.html">Drama</a></li>
+			<li><a href="documentary.html">Documentary</a></li>
+			<li><a href="animation.html">Animation</a></li>
 		    </div>'''
 		  
 end_main_page_content = '''
@@ -158,15 +158,35 @@ def open_movies_page(movies):
   documentary_output = open('documentary.html', 'w')
   animation_output = open('animation.html', 'w')
  
+  ###Going through the movie choices and creating lists for each movie genre (for content generation)
+  drama = []
+  documentary = []
+  animation = []
+  for movie in movies:
+	if movie.genre == 'Drama':
+		drama.append(movie)
+	elif movie.genre == 'Documentary':
+		documentary.append(movie)
+	elif movie.genre == 'Animation':
+		animation.append(movie)
+
   # Replace the placeholder for the movie tiles with the actual dynamically generated content
-  rendered_content = end_main_page_content.format(movie_tiles=create_movie_tiles_content(movies))
-  rendered_content = main_page_content + header_bar + end_main_page_content
+  main_page_content = top_main_page_content + header_bar + end_main_page_content
+  all_rendered_content = main_page_content.format(movie_tiles=create_movie_tiles_content(movies))
+
+  # Creating Genre Pages
+  drama_rendered_content = main_page_content.format(movie_tiles=create_movie_tiles_content(drama))
+  documentary_rendered_content = main_page_content.format(movie_tiles=create_movie_tiles_content(documentary))
+  animation_rendered_content = main_page_content.format(movie_tiles=create_movie_tiles_content(animation))
 
   # Output the file
-  main_output.write(main_page_head + rendered_content)
+  main_output.write(main_page_head + all_rendered_content)
   main_output.close()
+  drama_output.write(main_page_head + drama_rendered_content)
   drama_output.close()
+  documentary_output.write(main_page_head + documentary_rendered_content)
   documentary_output.close()
+  animation_output.write(main_page_head + animation_rendered_content)
   animation_output.close()
 
   # open the output file in the browser
