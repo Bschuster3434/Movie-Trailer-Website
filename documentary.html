@@ -31,7 +31,7 @@
             margin-bottom: 20px;
             padding-top: 20px;
         }
-        .movie-tile:hover {
+        .movie-image:hover {
             background-color: #EEE;
             cursor: pointer;
         }
@@ -57,7 +57,7 @@
             $("#trailer-video-container").empty();
         });
         // Start playing the video whenever the trailer modal is opened
-        $(document).on('click', '.movie-tile', function (event) {
+        $(document).on('click', '.movie-image', function (event) {
             var trailerYouTubeId = $(this).attr('data-trailer-youtube-id')
             var sourceUrl = 'http://www.youtube.com/embed/' + trailerYouTubeId + '?autoplay=1&html5=1';
             $("#trailer-video-container").empty().append($("<iframe></iframe>", {
@@ -109,24 +109,20 @@
     </div>
     <div class="container">
       
-<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="AdJYzgJ4CwI" data-toggle="modal" data-target="#trailer">
+<div class="col-md-6 col-lg-4 movie-tile text-center">
+	<div class="movie-image" data-trailer-youtube-id="AdJYzgJ4CwI" data-toggle="modal" data-target="#trailer">
     <img src="http://foreveryoungadult.com/_uploads/images/29540/thequeenofversailles__span.jpg" width="220" height="342">
+	</div>
     <h2>The Queen of Versailles</h2>
-	<button type="button" class="btn btn-default">
-		<a href="http://www.amazon.com/Queen-Versailles-Jackie-Siegel/dp/B00A6N7GMG/ref=sr_1_1?ie=UTF8&qid=1428575684&sr=8-1&keywords=the+queen+of+versailles">
-			Purchase on Amazon!
-		</a>
-	</button>
+	<a href="http://www.amazon.com/Queen-Versailles-Jackie-Siegel/dp/B00A6N7GMG/ref=sr_1_1?ie=UTF8&qid=1428575684&sr=8-1&keywords=the+queen+of+versailles" class="btn btn-default" role="button">Purchase on Amazon!</a>
 	</div>
 
-<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="I1UDS2kgqY8" data-toggle="modal" data-target="#trailer">
+<div class="col-md-6 col-lg-4 movie-tile text-center">
+	<div class="movie-image" data-trailer-youtube-id="I1UDS2kgqY8" data-toggle="modal" data-target="#trailer">
     <img src="http://upload.wikimedia.org/wikipedia/en/4/47/Jiro_sushi_poster.jpg" width="220" height="342">
+	</div>
     <h2>Jiro Dreams of Sushi</h2>
-	<button type="button" class="btn btn-default">
-		<a href="http://www.amazon.com/Jiro-Dreams-Sushi-Ono/dp/B008ODZEQ0/ref=sr_1_1?ie=UTF8&qid=1428575756&sr=8-1&keywords=jiro+dreams+of+sushi">
-			Purchase on Amazon!
-		</a>
-	</button>
+	<a href="http://www.amazon.com/Jiro-Dreams-Sushi-Ono/dp/B008ODZEQ0/ref=sr_1_1?ie=UTF8&qid=1428575756&sr=8-1&keywords=jiro+dreams+of+sushi" class="btn btn-default" role="button">Purchase on Amazon!</a>
 	</div>
 
     </div>

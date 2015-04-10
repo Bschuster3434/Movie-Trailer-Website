@@ -31,7 +31,7 @@
             margin-bottom: 20px;
             padding-top: 20px;
         }
-        .movie-tile:hover {
+        .movie-image:hover {
             background-color: #EEE;
             cursor: pointer;
         }
@@ -57,7 +57,7 @@
             $("#trailer-video-container").empty();
         });
         // Start playing the video whenever the trailer modal is opened
-        $(document).on('click', '.movie-tile', function (event) {
+        $(document).on('click', '.movie-image', function (event) {
             var trailerYouTubeId = $(this).attr('data-trailer-youtube-id')
             var sourceUrl = 'http://www.youtube.com/embed/' + trailerYouTubeId + '?autoplay=1&html5=1';
             $("#trailer-video-container").empty().append($("<iframe></iframe>", {
@@ -109,24 +109,20 @@
     </div>
     <div class="container">
       
-<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="ORFWdXl_zJ4" data-toggle="modal" data-target="#trailer">
+<div class="col-md-6 col-lg-4 movie-tile text-center">
+	<div class="movie-image" data-trailer-youtube-id="ORFWdXl_zJ4" data-toggle="modal" data-target="#trailer">
     <img src="http://upload.wikimedia.org/wikipedia/en/0/05/Up_%282009_film%29.jpg" width="220" height="342">
+	</div>
     <h2>Up</h2>
-	<button type="button" class="btn btn-default">
-		<a href="http://www.amazon.com/Up-Ed-Asner/dp/B005ZMTXMY/ref=sr_1_1?ie=UTF8&qid=1428575943&sr=8-1&keywords=Up">
-			Purchase on Amazon!
-		</a>
-	</button>
+	<a href="http://www.amazon.com/Up-Ed-Asner/dp/B005ZMTXMY/ref=sr_1_1?ie=UTF8&qid=1428575943&sr=8-1&keywords=Up" class="btn btn-default" role="button">Purchase on Amazon!</a>
 	</div>
 
-<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="ZisWjdjs-gM" data-toggle="modal" data-target="#trailer">
+<div class="col-md-6 col-lg-4 movie-tile text-center">
+	<div class="movie-image" data-trailer-youtube-id="ZisWjdjs-gM" data-toggle="modal" data-target="#trailer">
     <img src="http://upload.wikimedia.org/wikipedia/en/c/c2/WALL-Eposter.jpg" width="220" height="342">
+	</div>
     <h2>WALL-E</h2>
-	<button type="button" class="btn btn-default">
-		<a href="http://www.amazon.com/gp/product/B003QTSMXE/ref=pd_cbs_mov_aiv_1">
-			Purchase on Amazon!
-		</a>
-	</button>
+	<a href="http://www.amazon.com/gp/product/B003QTSMXE/ref=pd_cbs_mov_aiv_1" class="btn btn-default" role="button">Purchase on Amazon!</a>
 	</div>
 
     </div>
