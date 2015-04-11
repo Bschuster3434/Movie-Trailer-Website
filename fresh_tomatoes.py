@@ -105,7 +105,7 @@ top_main_page_content = '''
       <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
           <div class="navbar-header">
-            <a class="navbar-brand" href="fresh_tomatoes_all.html">Top Movie Choices by Brian (All)</a>
+            <a class="navbar-brand" href="index.html">Top Movie Choices by Brian (All)</a>
 		  </div>
           '''
 
@@ -116,7 +116,7 @@ header_bar = '''
 			<li><a href="animation.html">Animation</a></li>
 		    </div>
 			<div class="nav navbar-nav navbar-right"> 
-			<li><a href="submission/add_movie.html">Add Movie</a></li>
+			<li><a href="add_movie.html">Add Movie</a></li>
 			</div>
 			'''
 		  
@@ -167,7 +167,7 @@ def create_add_movie_page():
   
 def open_movies_page(movies):
   # Create or overwrite the output file
-  main_output = open('fresh_tomatoes_all.html', 'w')
+  main_output = open('index.html', 'w')
   drama_output = open('drama.html', 'w')
   documentary_output = open('documentary.html', 'w')
   animation_output = open('animation.html', 'w')
