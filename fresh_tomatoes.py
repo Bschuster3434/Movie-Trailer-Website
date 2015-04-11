@@ -106,14 +106,19 @@ top_main_page_content = '''
         <div class="container">
           <div class="navbar-header">
             <a class="navbar-brand" href="fresh_tomatoes_all.html">Top Movie Choices by Brian (All)</a>
-          </div>'''
+		  </div>
+          '''
 
 header_bar = '''
-			<div class="nav navbar-nav navbar-right"> 
+			<div class="nav navbar-nav navbar-center">
 			<li><a href="drama.html">Drama</a></li>
 			<li><a href="documentary.html">Documentary</a></li>
 			<li><a href="animation.html">Animation</a></li>
-		    </div>'''
+		    </div>
+			<div class="nav navbar-nav navbar-right"> 
+			<li><a href="add_movie.html">Add Movie</a></li>
+			</div>
+			'''
 		  
 end_main_page_content = '''
         </div>
