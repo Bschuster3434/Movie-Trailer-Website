@@ -116,7 +116,7 @@ header_bar = '''
 			<li><a href="animation.html">Animation</a></li>
 		    </div>
 			<div class="nav navbar-nav navbar-right"> 
-			<li><a href="add_movie.html">Add Movie</a></li>
+			<li><a href="submission/add_movie.html">Add Movie</a></li>
 			</div>
 			'''
 		  

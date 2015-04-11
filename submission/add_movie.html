@@ -1,4 +1,3 @@
-
 <head>
     <meta charset="utf-8">
     <title>Fresh Tomatoes!</title>
@@ -12,6 +11,9 @@
         body {
             padding-top: 80px;
         }
+		.header {
+			margin-bottom: 50px;
+		}
         #trailer .modal-dialog {
             margin-top: 200px;
             width: 640px;
@@ -75,61 +77,61 @@
         });
     </script>
 </head>
-
 <!DOCTYPE html>
 <html lang="en">
   <body>
-    <!-- Trailer Video Modal -->
-    <div class="modal" id="trailer">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <a href="#" class="hanging-close" data-dismiss="modal" aria-hidden="true">
-            <img src="https://lh5.ggpht.com/v4-628SilF0HtHuHdu5EzxD7WRqOrrTIDi_MhEG6_qkNtUK5Wg7KPkofp_VJoF7RS2LhxwEFCO1ICHZlc-o_=s0#w=24&h=24"/>
-          </a>
-          <div class="scale-media" id="trailer-video-container">
-          </div>
-        </div>
-      </div>
-    </div>
-    
-    <!-- Main Page Content -->
+      <!-- Main Page Content -->
     <div class="container">
       <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
           <div class="navbar-header">
-            <a class="navbar-brand" href="fresh_tomatoes_all.html">Top Movie Choices by Brian (All)</a>
+            <a class="navbar-brand" href="../fresh_tomatoes_all.html">Top Movie Choices by Brian (All)</a>
 		  </div>
-          
-			<div class="nav navbar-nav navbar-center">
-			<li><a href="drama.html">Drama</a></li>
-			<li><a href="documentary.html">Documentary</a></li>
-			<li><a href="animation.html">Animation</a></li>
+		  	<div class="nav navbar-nav navbar-center">
+			<li><a href="../drama.html">Drama</a></li>
+			<li><a href="../documentary.html">Documentary</a></li>
+			<li><a href="../animation.html">Animation</a></li>
 		    </div>
 			<div class="nav navbar-nav navbar-right"> 
-			<li><a href="submission/add_movie.html">Add Movie</a></li>
+			<li><a href="add_movie.html">Add Movie</a></li>
 			</div>
-			
-        </div>
+		</div>
       </div>
     </div>
-    <div class="container">
-      
-<div class="col-md-6 col-lg-4 movie-tile text-center">
-	<div class="movie-image" data-trailer-youtube-id="ORFWdXl_zJ4" data-toggle="modal" data-target="#trailer">
-    <img src="http://upload.wikimedia.org/wikipedia/en/0/05/Up_%282009_film%29.jpg" width="220" height="342">
+		<!-- Form that grabs content -->
+	<div class="container">
+	<div class ="page-header">
+		<h2>Please Submit a Film to Add to Our Library!</h2>
 	</div>
-    <h2>Up</h2>
-	<a href="http://www.amazon.com/Up-Ed-Asner/dp/B005ZMTXMY/ref=sr_1_1?ie=UTF8&qid=1428575943&sr=8-1&keywords=Up" class="btn btn-default" role="button">Purchase on Amazon!</a>
+	<form name="submit_movie" action="store_movie.py" method="post">
+			<div class="form-group">
+				<label for="movie_name">Movie Name</label>
+				<input type="text" class="form-control" id="movie_name" placeholder="The Queen of Versailles"/>
+			</div>
+			<div class="form-group">
+				<label for="poster_image">Movie Poster</label>
+				<input type="url" class="form-control" id="poster_image" placeholder="http://foreveryoungadult.com/_uploads/images/29540/thequeenofversailles__span.jpg"/>
+			</div>
+			<div class="form-group">
+				<label for="youtube_trailer" >Youtube Trailer</label>
+				<input type="url" class="form-control" id="youtube_trailer" placeholder="https://www.youtube.com/watch?v=AdJYzgJ4CwI" />
+			</div>	
+			<div class="form-group">
+				<label for="amazon_link" >Amazon Purchase Link</label>
+				<input type="url" class="form-control" id="amazon_link" placeholder="http://www.amazon.com/Queen-Versailles-Jackie-Siegel/dp/B00A6N7GMG/ref=sr_1_1?ie=UTF8&qid=1428575684&sr=8-1&keywords=the+queen+of+versailles" />
+			</div>
+			<div class="form-group">
+				<label for="genre" >Genre</label>
+				<select id="genre" class="form-control">
+					<option value="documentary">Documentary</option>
+					<option value="drama">Drama</option>
+					<option value="animation">Animation</option>
+				</select>
+			</div>
+			<button type="submit" class="btn btn-primary">Submit</button>
+	</form>
 	</div>
-
-<div class="col-md-6 col-lg-4 movie-tile text-center">
-	<div class="movie-image" data-trailer-youtube-id="ZisWjdjs-gM" data-toggle="modal" data-target="#trailer">
-    <img src="http://upload.wikimedia.org/wikipedia/en/c/c2/WALL-Eposter.jpg" width="220" height="342">
-	</div>
-    <h2>WALL-E</h2>
-	<a href="http://www.amazon.com/gp/product/B003QTSMXE/ref=pd_cbs_mov_aiv_1" class="btn btn-default" role="button">Purchase on Amazon!</a>
-	</div>
-
-    </div>
+	
+	
   </body>
 </html>
