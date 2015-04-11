@@ -160,6 +160,11 @@ def create_movie_tiles_content(movies):
         )
     return content
 
+def create_add_movie_page():
+  #  Creating the html to load the 'Add Movie' Page
+  return None
+  
+  
 def open_movies_page(movies):
   # Create or overwrite the output file
   main_output = open('fresh_tomatoes_all.html', 'w')
