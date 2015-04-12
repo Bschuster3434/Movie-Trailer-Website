@@ -167,10 +167,10 @@ def create_add_movie_page():
   
 def open_movies_page(movies):
   # Create or overwrite the output file
-  main_output = open('index.html', 'w')
-  drama_output = open('drama.html', 'w')
-  documentary_output = open('documentary.html', 'w')
-  animation_output = open('animation.html', 'w')
+  main_output = open('../www/index.html', 'w')
+  drama_output = open('../www/drama.html', 'w')
+  documentary_output = open('../www/documentary.html', 'w')
+  animation_output = open('../www/animation.html', 'w')
  
   ###Going through the movie choices and creating lists for each movie genre (for content generation)
   drama = []
