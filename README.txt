@@ -17,4 +17,4 @@ I will be modifying this base template in the following ways:
   the film from amazon.com
 - Adding a UI Page to allow for dynamically adding films to the
   list without having to interact with the programming language
-  directly
+  directly (requires the code to be re-compiled)
