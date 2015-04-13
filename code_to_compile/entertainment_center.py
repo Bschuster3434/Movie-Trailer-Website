@@ -1,5 +1,6 @@
 import media
 import fresh_tomatoes
+import csv
 
 #Creating Movie Objects
 ###movie_title,  poster_image, trailer_youtube, genre, amazon_link
@@ -42,5 +43,17 @@ walle = media.Movie(movie_title = "WALL-E",
 movies = [pirates_of_silicon_valley, the_social_network, queen_of_versailles, jiro_dreams_of_sushi, up, walle]
 
 ##Adding additional films
+
+with open('additional_movies.csv', 'rb') as f:
+	csv_reader = csv.reader(f)
+	new_movie_records = [row for row in csv_reader][1:]
+
+for record in new_movie_records:
+	next_movie = media.Movie(movie_title = record[0],
+		poster_image = record[1],
+		trailer_youtube = record[2],
+		amazon_link = record[3],
+		genre = record[4].strip())
+	movies.append(next_movie)
 
 fresh_tomatoes.open_movies_page(movies)

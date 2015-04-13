@@ -103,6 +103,7 @@
 	<div class="container">
 	<div class ="page-header">
 		<h2>Thank You For Your Submission!</h2>
+		<p>Your Submission Will Be Added Soon!</p>
 			<?php
 	
 			$movie_file = fopen("../code_to_compile/additional_movies.csv","a+");

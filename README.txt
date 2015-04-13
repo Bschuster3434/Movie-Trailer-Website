@@ -12,11 +12,9 @@ I will be modifying this base template in the following ways:
 
 - Adding multiple categories of films via a menu at the top, and
   populating each group with their own genre (documentary, drama,
-  animated film, etc.)
+  animated films)
 - Adding a link to the amazon page to allow for the purchase of
   the film from amazon.com
 - Adding a UI Page to allow for dynamically adding films to the
   list without having to interact with the programming language
   directly
-- Having a page that updates directly from the top film from
-  rotten tomatoes

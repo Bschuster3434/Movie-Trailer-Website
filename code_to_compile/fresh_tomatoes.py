@@ -177,11 +177,11 @@ def open_movies_page(movies):
   documentary = []
   animation = []
   for movie in movies:
-	if movie.genre == 'Drama':
+	if movie.genre.lower() == 'drama':
 		drama.append(movie)
-	elif movie.genre == 'Documentary':
+	elif movie.genre.lower() == 'documentary':
 		documentary.append(movie)
-	elif movie.genre == 'Animation':
+	elif movie.genre.lower() == 'animation':
 		animation.append(movie)
 
   # Replace the placeholder for the movie tiles with the actual dynamically generated content
@@ -202,7 +202,3 @@ def open_movies_page(movies):
   documentary_output.close()
   animation_output.write(main_page_head + animation_rendered_content)
   animation_output.close()
-
-  # open the output file in the browser
-  url = os.path.abspath(main_output.name)
-  webbrowser.open('file://' + url, new=2) # open in a new tab, if possible
