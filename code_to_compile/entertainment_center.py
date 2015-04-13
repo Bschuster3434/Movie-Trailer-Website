@@ -40,4 +40,7 @@ walle = media.Movie(movie_title = "WALL-E",
 	amazon_link = "http://www.amazon.com/gp/product/B003QTSMXE/ref=pd_cbs_mov_aiv_1")
 
 movies = [pirates_of_silicon_valley, the_social_network, queen_of_versailles, jiro_dreams_of_sushi, up, walle]
+
+##Adding additional films
+
 fresh_tomatoes.open_movies_page(movies)

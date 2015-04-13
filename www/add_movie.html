@@ -1,3 +1,4 @@
+<html>
 <head>
     <meta charset="utf-8">
     <title>Fresh Tomatoes!</title>
@@ -103,32 +104,32 @@
 	<div class ="page-header">
 		<h2>Please Submit a Film to Add to Our Library!</h2>
 	</div>
-	<form name="submit_movie" action="store_movie.php" method="get">
-			<div class="form-group">
-				<label>Movie Name</label>
-				<input type="text" class="form-control" name="movie_name" placeholder="The Queen of Versailles"/>
-			</div>
-			<div class="form-group">
-				<label>Movie Poster</label>
-				<input type="url" class="form-control" name="poster_image" placeholder="http://foreveryoungadult.com/_uploads/images/29540/thequeenofversailles__span.jpg"/>
-			</div>
-			<div class="form-group">
-				<label>Youtube Trailer</label>
-				<input type="url" class="form-control" name="youtube_trailer" placeholder="https://www.youtube.com/watch?v=AdJYzgJ4CwI" />
-			</div>	
-			<div class="form-group">
-				<label>Amazon Purchase Link</label>
-				<input type="url" class="form-control" name="amazon_link" placeholder="http://www.amazon.com/Queen-Versailles-Jackie-Siegel/dp/B00A6N7GMG/ref=sr_1_1?ie=UTF8&qid=1428575684&sr=8-1&keywords=the+queen+of+versailles" />
-			</div>
-			<div class="form-group">
-				<label>Genre</label>
-				<select name="genre" class="form-control">
-					<option value="documentary">Documentary</option>
-					<option value="drama">Drama</option>
-					<option value="animation">Animation</option>
-				</select>
-			</div>
-			<button type="submit" class="btn btn-primary">Submit</button>
+	<form name="submit_movie" action="store_movie.php" method="post">
+		<div class="form-group">
+			<label>Movie Name</label>
+			<input type="text" class="form-control" name="movie_name" placeholder="The Queen of Versailles" required>
+		</div>
+		<div class="form-group">
+			<label>Movie Poster</label>
+			<input type="url" class="form-control" name="poster_image" placeholder="http://foreveryoungadult.com/_uploads/images/29540/thequeenofversailles__span.jpg" required>
+		</div>
+		<div class="form-group">
+			<label>Youtube Trailer</label>
+			<input type="url" class="form-control" name="youtube_trailer" placeholder="https://www.youtube.com/watch?v=AdJYzgJ4CwI" required>
+		</div>	
+		<div class="form-group">
+			<label>Amazon Purchase Link</label>
+			<input type="url" class="form-control" name="amazon_link" placeholder="http://www.amazon.com/Queen-Versailles-Jackie-Siegel/dp/B00A6N7GMG/ref=sr_1_1?ie=UTF8&qid=1428575684&sr=8-1&keywords=the+queen+of+versailles" required>
+		</div>		
+		<div class="form-group">
+			<label>Genre</label>
+			<select name="genre" class="form-control">
+				<option value="documentary">Documentary</option>
+				<option value="drama">Drama</option>
+				<option value="animation">Animation</option>
+			</select>
+		</div>		
+	<button type="submit" class="btn btn-primary">Submit</button>
 	</form>
 	</div>
 	
