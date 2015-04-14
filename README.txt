@@ -48,6 +48,24 @@ IMPLEMENTATION STEPS
    Alternatively, you can download the ZIP from the link from here:
        https://github.com/Bschuster3434/Movie-Trailer-Website
 6) In the MAMP GUI, open preferences and change the
-      'Start page url' to '/www' then click 'OK'
+      'Start page url' to 'Movie-Trailer-Website/www' then click 'OK'
 7) After the server restarts, click 'Open start page' to go to the
       website
+
+The website will run out of box with the movies already loaded in
+'code_to_compile' directory. Enjoy!
+	  
+-----------------------------------------------------------------
+AFTER ADDING A FILM
+
+When a film has been added, a CSV called 'additional_movies.csv'
+in the directory 'code_to_compile' will be updated. In order to
+reflect the additional movie in this website, the python script
+'entertainment_center' will need to be run. Here are the steps:
+
+1) Open your terminal program and cd to
+      '../MAMP/htdocs/Movie-Trailer-Website/code_to_compile'
+2) Type 'python entertainment_center.py' and hit enter
+
+The code will re-run and you can now see your movie reflected
+in the updated website.
