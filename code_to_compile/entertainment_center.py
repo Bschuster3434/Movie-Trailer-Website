@@ -2,52 +2,23 @@ import media
 import fresh_tomatoes
 import csv
 
-#Creating Movie Objects
-###movie_title,  poster_image, trailer_youtube, genre, amazon_link
-pirates_of_silicon_valley = media.Movie(movie_title = "Pirates of Silicon Valley",
-	poster_image = "http://upload.wikimedia.org/wikipedia/en/3/30/Movieposterposv.jpg",
-	trailer_youtube = "https://www.youtube.com/watch?v=lEyrivrjAuU",
-	genre = "Drama",
-	amazon_link = "http://www.amazon.com/Pirates-Silicon-Valley-Noah-Wyle/dp/B0009NSCS0/ref=sr_1_1?ie=UTF8&qid=1428574874&sr=8-1&keywords=Pirates+of+Silicon+Valley")
-				   
-the_social_network = media.Movie(movie_title = "The Social Network",
-	poster_image = "http://upload.wikimedia.org/wikipedia/en/7/7a/Social_network_film_poster.jpg",
-	trailer_youtube = "https://www.youtube.com/watch?v=lB95KLmpLR4",
-	genre = "Drama",
-	amazon_link = "http://www.amazon.com/Social-Network-Jesse-Eisenberg/dp/B004HWR406/ref=sr_1_1?ie=UTF8&qid=1428575594&sr=8-1&keywords=The+Social+Network")
+# Creating Movie Objects
+### Below are the variables necessary to create a full movie object
+### movie_title,  poster_image, trailer_youtube, genre, amazon_link
 
-queen_of_versailles = media.Movie(movie_title = "The Queen of Versailles", 
-	poster_image = "http://foreveryoungadult.com/_uploads/images/29540/thequeenofversailles__span.jpg", 
-	trailer_youtube = "https://www.youtube.com/watch?v=AdJYzgJ4CwI",
-	genre = "Documentary",
-	amazon_link = "http://www.amazon.com/Queen-Versailles-Jackie-Siegel/dp/B00A6N7GMG/ref=sr_1_1?ie=UTF8&qid=1428575684&sr=8-1&keywords=the+queen+of+versailles")
+# Creating the list variable for the movies
+movies = []
 
-jiro_dreams_of_sushi = media.Movie(movie_title = "Jiro Dreams of Sushi", 
-	poster_image = "http://upload.wikimedia.org/wikipedia/en/4/47/Jiro_sushi_poster.jpg", 
-	trailer_youtube = "https://www.youtube.com/watch?v=I1UDS2kgqY8",
-	genre = "Documentary",
-	amazon_link = "http://www.amazon.com/Jiro-Dreams-Sushi-Ono/dp/B008ODZEQ0/ref=sr_1_1?ie=UTF8&qid=1428575756&sr=8-1&keywords=jiro+dreams+of+sushi")
-								   
-up = media.Movie(movie_title = "Up",
-	poster_image = "http://upload.wikimedia.org/wikipedia/en/0/05/Up_%282009_film%29.jpg",
-	trailer_youtube = "https://www.youtube.com/watch?v=ORFWdXl_zJ4",
-	genre = "Animation",
-	amazon_link = "http://www.amazon.com/Up-Ed-Asner/dp/B005ZMTXMY/ref=sr_1_1?ie=UTF8&qid=1428575943&sr=8-1&keywords=Up")
-	
-walle = media.Movie(movie_title = "WALL-E",
-	poster_image = "http://upload.wikimedia.org/wikipedia/en/c/c2/WALL-Eposter.jpg",
-	trailer_youtube = "https://www.youtube.com/watch?v=ZisWjdjs-gM",
-	genre = "Animation",
-	amazon_link = "http://www.amazon.com/gp/product/B003QTSMXE/ref=pd_cbs_mov_aiv_1")
-
-movies = [pirates_of_silicon_valley, the_social_network, queen_of_versailles, jiro_dreams_of_sushi, up, walle]
-
-##Adding additional films
-
+# Opening the csv file and reading the list of movies into a list
 with open('additional_movies.csv', 'rb') as f:
 	csv_reader = csv.reader(f)
-	new_movie_records = [row for row in csv_reader][1:]
+	# Eliminating the Header Row with the [1:]
+	new_movie_records = [row for row in csv_reader][1:] 
 
+# The following loop is taking the csv file and parsing it into the
+# python movie object created in 'media'. The csv will always have
+# the same order, so the numeric place of the correct data element
+# will be preserved.
 for record in new_movie_records:
 	next_movie = media.Movie(movie_title = record[0],
 		poster_image = record[1],
@@ -56,4 +27,5 @@ for record in new_movie_records:
 		genre = record[4].strip())
 	movies.append(next_movie)
 
+# Opening fresh_tomatoes to create the html file
 fresh_tomatoes.open_movies_page(movies)
