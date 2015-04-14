@@ -105,7 +105,9 @@
 		<h2>Thank You For Your Submission!</h2>
 		<p>Your Submission Will Be Added Soon!</p>
 			<?php
-	
+			
+			//Opening the movie file in order to append the information from the 'add_movie.html' submission form
+			
 			$movie_file = fopen("../code_to_compile/additional_movies.csv","a+");
 			
 			fwrite($movie_file,"\r\n".$_POST["movie_name"].",".$_POST["poster_image"].",".$_POST["youtube_trailer"].",".$_POST["amazon_link"].",".$_POST["genre"]);

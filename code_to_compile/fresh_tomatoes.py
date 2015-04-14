@@ -1,4 +1,3 @@
-import webbrowser
 import os
 import re
 
@@ -159,46 +158,41 @@ def create_movie_tiles_content(movies):
 			amazon_link = movie.amazon_link
         )
     return content
-
-def create_add_movie_page():
-  #  Creating the html to load the 'Add Movie' Page
-  return None
-  
   
 def open_movies_page(movies):
-  # Create or overwrite the output file
-  main_output = open('../www/index.html', 'w')
-  drama_output = open('../www/drama.html', 'w')
-  documentary_output = open('../www/documentary.html', 'w')
-  animation_output = open('../www/animation.html', 'w')
- 
-  ###Going through the movie choices and creating lists for each movie genre (for content generation)
-  drama = []
-  documentary = []
-  animation = []
-  for movie in movies:
-	if movie.genre.lower() == 'drama':
-		drama.append(movie)
-	elif movie.genre.lower() == 'documentary':
-		documentary.append(movie)
-	elif movie.genre.lower() == 'animation':
-		animation.append(movie)
+	# Create or overwrite the output file
+	main_output = open('../www/index.html', 'w')
+	drama_output = open('../www/drama.html', 'w')
+	documentary_output = open('../www/documentary.html', 'w')
+	animation_output = open('../www/animation.html', 'w')
 
-  # Replace the placeholder for the movie tiles with the actual dynamically generated content
-  main_page_content = top_main_page_content + header_bar + end_main_page_content
-  all_rendered_content = main_page_content.format(movie_tiles=create_movie_tiles_content(movies))
+	# Going through the movie choices and creating lists for each movie genre (for content generation).
+	drama = []
+	documentary = []
+	animation = []
+	for movie in movies:
+		if movie.genre.lower() == 'drama':
+			drama.append(movie)
+		elif movie.genre.lower() == 'documentary':
+			documentary.append(movie)
+		elif movie.genre.lower() == 'animation':
+			animation.append(movie)
 
-  # Creating Genre Pages
-  drama_rendered_content = main_page_content.format(movie_tiles=create_movie_tiles_content(drama))
-  documentary_rendered_content = main_page_content.format(movie_tiles=create_movie_tiles_content(documentary))
-  animation_rendered_content = main_page_content.format(movie_tiles=create_movie_tiles_content(animation))
+	# Replace the placeholder for the movie tiles with the actual dynamically generated content.
+	main_page_content = top_main_page_content + header_bar + end_main_page_content
+	all_rendered_content = main_page_content.format(movie_tiles=create_movie_tiles_content(movies))
 
-  # Output the file
-  main_output.write(main_page_head + all_rendered_content)
-  main_output.close()
-  drama_output.write(main_page_head + drama_rendered_content)
-  drama_output.close()
-  documentary_output.write(main_page_head + documentary_rendered_content)
-  documentary_output.close()
-  animation_output.write(main_page_head + animation_rendered_content)
-  animation_output.close()
+	# Creating the various strings that will make-up the Genre Pages.
+	drama_rendered_content = main_page_content.format(movie_tiles=create_movie_tiles_content(drama))
+	documentary_rendered_content = main_page_content.format(movie_tiles=create_movie_tiles_content(documentary))
+	animation_rendered_content = main_page_content.format(movie_tiles=create_movie_tiles_content(animation))
+
+	# Write the file to the appropriate html source and close the file.
+	main_output.write(main_page_head + all_rendered_content)
+	main_output.close()
+	drama_output.write(main_page_head + drama_rendered_content)
+	drama_output.close()
+	documentary_output.write(main_page_head + documentary_rendered_content)
+	documentary_output.close()
+	animation_output.write(main_page_head + animation_rendered_content)
+	animation_output.close()
